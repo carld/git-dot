@@ -14,5 +14,3 @@ git log --pretty=format:'%h|%p|%s' |
 
 dot -Tpdf "$BRANCH-graph.dot" > "$BRANCH-graph.pdf"
 
-rm "$BRANCH-graph.dot"
-
