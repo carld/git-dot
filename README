@@ -1,0 +1,17 @@
+
+A bash function that will pipe the output of git log
+through awk to produce a dot file.
+
+The dot file is rendered as a pdf.
+
+Requires graphviz.
+
+To install:
+
+  cp .git-dot.sh ~/
+  
+Add the following to the end of ~/.bash_profile
+
+  source ~/.git-dot.sh
+
+
