@@ -13,6 +13,6 @@ function git-dot () {
       for (i in a) print "node" a[i] " -> " " node" $1 ";"; } \
     END   { print "}"; } ' > "$BRANCH-graph.dot"
 
-  dot -Tpdf "$BRANCH-graph.dot" > "$BRANCH-graph.pdf"
+  dot -Tpdf -O "$BRANCH-graph.dot"
 }
 
