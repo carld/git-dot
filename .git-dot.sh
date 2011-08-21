@@ -3,7 +3,7 @@
 function git-dot () {
   BRANCH=`git branch | grep '*' | sed -e 's/\* \(.*\)/\1/'`
 
-  git log --pretty=format:'%h|%p|%s' | 
+  git log --pretty=format:'%h|%p|%s' $@ | 
     awk -F'|' ' \
     BEGIN { print "digraph git {"; print "rankdir=BT;";} \
     { \
