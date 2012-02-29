@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 function git-dot () {
   BRANCH=`git branch | grep '*' | sed -e 's/\* \(.*\)/\1/'`
@@ -8,6 +8,7 @@ function git-dot () {
     BEGIN { 
       print "digraph git {"; 
       print "rankdir=BT;";
+      print "node [shape=box];";
     }
     {
       gsub(/"/, "", $3)
@@ -22,4 +23,6 @@ function git-dot () {
 
   dot -Tpdf -O "$BRANCH-graph.dot"
 }
+
+git-dot $@
 

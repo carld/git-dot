@@ -2,19 +2,18 @@
 A bash function that will pipe the output of git log
 through awk to produce a dot file.
 
-The dot file is rendered as a pdf.
+The graph is then rendered as a pdf.
 
 Requires graphviz.
 
-To install:
+OSX:        sudo port install graphviz
+GNU/Linux:  sudo apt-get install graphviz
 
-  cp .git-dot.sh ~/
+To install git dot:
+
+  sudo install -v -m 0755 git-dot $(dirname $(which git))
   
-Add the following to the end of ~/.bash_profile
-
-  source ~/.git-dot.sh
-
 Try it out:
 
-  git-dot --since=2010-10-01 --branches=*
+  git dot --since=2010-10-01 --branches=*
 
