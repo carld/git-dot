@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 function git-dot () {
-  BRANCH=`git branch | grep '*' | sed -e 's/\* \(.*\)/\1/'`
+  BRANCH=$(git branch | grep '*' | sed -e 's/\* \(.*\)/\1/')
 
   git log --pretty=format:'%h|%p|%s|%d' $@ | 
     awk -F'|' '
